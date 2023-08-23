@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+header {
+    background-color: #5f27cd;
+    padding: 16px 0;
+    color: #fff;
+    display: flex;  /*Botão ao lado do titulo*/
+    border-bottom: 16px solid #341f94;  /*Efeito de borda*/
+    justify-content: center;    /*Centraliza o cabecalho*/
+    text-transform: uppercase;  /*Todas as letras em maiusculo*/
+    font-style: italic;
+}
+
+header button {
+    margin-left: 16px;  /*Descola o botao do titulo*/
+}
+
+form {
+    background-color: #c8d6e5;
+    padding: 24px 0;
+    text-align: center;
+    display: none;
+}
+
+form h2 {
+    margin-bottom: 16px;
+}
+
+input, button {
+    padding: 8px;
+}
+
+button {
+    background-color: #009432;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#botao-cancelar {
+    background-color: red;
+}
+
+ul {
+    display: flex;  /*Os elementos ficam lado a lado*/
+    flex-wrap: wrap;    /*Cria uma nova linha quando as fotos ocuparem toda a tela*/
+}
+
+ul li {
+    max-width: 25%; /*Quatro intens por linha 100/4 = 25%*/
+    list-style: none;
+    position: relative; /*sobe o overlay-imagem-link para as fotos*/
+    max-height: 250px; /*Corta a foto*/
+    overflow-y: hidden; /*Esconde o que não sera exibido na foto*/
+}
+
+ul li img {
+    width: 100%; /*Permite que a imagem ocupe 100% do seu espaço sem sobreposição*/
+}
+
+.overlay-imagem-link {
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute; /*Posiciona o elemento na parte inferior do li*/
+    bottom: 0; /*Posiciona na extremidade*/
+    left: 0;
+    width: 100%; /*Largura*/
+    opacity: 0;
+    transition: all ease .5s;
+}
+
+.overlay-imagem-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul li:hover .overlay-imagem-link {
+    opacity: 1;
+}
